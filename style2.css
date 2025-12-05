@@ -86,7 +86,7 @@ section{
     display: flex;
     align-items: center;
     padding: 0 9%;
-   /* background: url('/images/pexels-umkreisel-app-956999.jpg') no-repeat;*/
+   gap: 40px;
         background-size: cover;
         background-position:center;
 }
@@ -134,7 +134,7 @@ top:0;
 left:0;
 width:0;
 height:100%;
-border-right:  2px solid var(--main-color);
+/*border-right:  2px solid var(--main-color);*/
 z-index:-1 ;
 animation: homeCursorText 6s linear infinite;
 animation-delay: 2s;
@@ -173,8 +173,6 @@ animation-delay: 2s;
     background: #fff;
     color: #0ef !important;   /* Text ALWAYS visible */
     border-color: #0ef;
-
-
 }
 
 .btn-box .btn:nth-child(2){
@@ -807,8 +805,8 @@ padding: 2rem 4%;
       font-size: 2rem;
       margin: 3rem 0;
 }
-}
 
+}
 @media (max-width:520px) {
     html {
         font-size: 50%;
@@ -948,31 +946,33 @@ transform:translate(-50%, -50%) rotate(360deg);
     }
 }
 
-/* Footer Social Icons */
 .footer-social {
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;        /* Allows icons to move to next line without breaking layout */
+    gap: 15px;              /* Even spacing between icons */
+    padding: 20px 0;
 }
 
 .footer-social a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid var(--main-color);
-    border-radius: 50%;
-    font-size: 20px;
-    color: var(--main-color);
-    margin: 0 8px;
-    transition: .4s;
+    font-size: 24px;        /* Adjust size */
+    color: #fff;            /* Your icon color */
+    transition: 0.3s;
 }
 
 .footer-social a:hover {
-    background: var(--main-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 15px var(--main-color);
-    transform: translateY(-5px);
+    color: #0ef;            /* Hover color */
+    transform: scale(1.1);
+}
+.typing-text {
+    color: #0ef;          /* text color */
+    font-weight: 600;
+    border-right: 2px solid #0ef;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+
 }
 
 /* Make footer layout perfect on mobile */
@@ -985,7 +985,3 @@ transform:translate(-50%, -50%) rotate(360deg);
         margin-top: 2rem;
     }
 }
-
-
-
-
