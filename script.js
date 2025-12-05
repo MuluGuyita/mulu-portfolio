@@ -42,3 +42,40 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+const roles = [
+    "Frontend Developer",
+    "Web Developer",
+    "Web Designer",
+    "Programmer",
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.querySelector(".typing-text");
+
+function typeEffect() {
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting) {
+        typingElement.textContent = currentRole.substring(0, charIndex--);
+    } else {
+        typingElement.textContent = currentRole.substring(0, charIndex++);
+    }
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1000); // pause before deleting
+        return;
+    }
+
+    if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length; // next text
+    }
+
+    setTimeout(typeEffect, isDeleting ? 80 : 120); // typing speed
+}
+
+typeEffect();
