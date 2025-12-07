@@ -153,9 +153,9 @@ animation-delay: 2s;
 }
 .btn-box .btn{
     position:relative;
-    display:flex;
-    justify-content:center;
-    text-align:center;
+display: flex !important;
+justify-content: center !important;
+align-items: center !important;
     width:15rem;
     height:100%;
     background:var(--main-color);
@@ -1171,6 +1171,7 @@ transform:translate(-50%, -50%) rotate(360deg);
 
     }
 }
+
 
 
 
