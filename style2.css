@@ -155,6 +155,7 @@ animation-delay: 2s;
     position:relative;
     display:inline-flex;
     justify-content:center;
+    text-align:center;
     width:15rem;
     height:100%;
     background:var(--main-color);
@@ -300,6 +301,7 @@ transition: .3s;
 }
 span {
     color: var(--main-color);
+    margin-left:5px;
 }
 .about-img {
     position: relative;
@@ -574,6 +576,182 @@ width:100%;
     color: #1f77b4; }
 .bxl-php { 
     color: #8993be; }
+
+/* ===== CERTIFICATES SECTION ===== */
+.certificates {
+    min-height: 100vh;
+    padding: 7rem 9% 2rem;
+    background: linear-gradient(135deg, #0b3b6a 0%, #2c2e30 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.certificates .heading {
+    text-align: center;
+    font-size: 4.2rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.certificates .heading span {
+    color: var(--main-color);
+}
+
+.certificates .heading::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--main-color);
+    border-radius: 0px;
+}
+
+/* Certificates Grid - Small images with small gaps */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Fixed 2 columns */
+    gap: 2rem; /* Small gaps between images */
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 900px; /* Keep container smaller */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Certificate Card - Small square */
+.certificate-card {
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+    transition: all 0.3s ease;
+    position: relative;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    height: 200px; /* Small height */
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Certificate Image - Small size */
+.certificate-card img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain; /* Fill the square */
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional minimal caption (hidden by default, shows on hover) */
+.certificate-caption {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    width:100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+     border-radius: 0 0 5px 5px;
+}
+
+.certificate-card:hover .certificate-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.certificate-caption h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.certificate-caption p {
+    font-size: 1.2rem;
+    color: var(--second-text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .certificate-card {
+        height: 180px;
+    }
+    
+    .certificates-grid {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        max-width: 400px;
+        gap: 1.5rem;
+    }
+    
+    .certificate-card {
+        height: 200px;
+    }
+    
+    .certificates {
+        padding: 6rem 5% 2rem;
+    }
+    
+    .certificates .heading {
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .certificate-card {
+        height: 170px;
+    }
+    
+    .certificate-caption h3 {
+        font-size: 1.3rem;
+    }
+    
+    .certificate-caption p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation for loading */
+.certificate-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s ease forwards;
+}
+
+.certificate-card:nth-child(1) { animation-delay: 0.1s; }
+.certificate-card:nth-child(2) { animation-delay: 0.2s; }
+.certificate-card:nth-child(3) { animation-delay: 0.3s; }
+.certificate-card:nth-child(4) { animation-delay: 0.4s; }
+.certificate-card:nth-child(5) { animation-delay: 0.5s; }
+.certificate-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .contact{
     min-height: auto;
@@ -985,3 +1163,4 @@ transform:translate(-50%, -50%) rotate(360deg);
         margin-top: 2rem;
     }
 }
+
