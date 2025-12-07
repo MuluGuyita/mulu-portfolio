@@ -301,7 +301,6 @@ transition: .3s;
 }
 span {
     color: var(--main-color);
-    margin-left:5px;
 }
 .about-img {
     position: relative;
@@ -1173,6 +1172,7 @@ transform:translate(-50%, -50%) rotate(360deg);
         align-items: center;
     }
 }
+
 
 
 
