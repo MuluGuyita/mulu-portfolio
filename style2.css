@@ -1168,11 +1168,10 @@ transform:translate(-50%, -50%) rotate(360deg);
         width: 100%;           
         max-width: 220px;     
         margin: 0 auto;       
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
     }
 }
+
 
 
 
