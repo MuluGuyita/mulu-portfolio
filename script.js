@@ -79,3 +79,15 @@ function typeEffect() {
 }
 
 typeEffect();
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // 🔴 VERY IMPORTANT — stops page refresh
+
+  // show success message
+  document.getElementById("formMessage").style.display = "block";
+
+  // clear form fields
+  this.reset();
+});
+
+
