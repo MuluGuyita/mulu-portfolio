@@ -89,5 +89,38 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   // clear form fields
   this.reset();
 });
+import { getDatabase, ref, push } from
+"https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
+
+const database = getDatabase(app);
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); // stop page refresh
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+   const number = document.getElementById("number").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  push(ref(database, "messages"), {
+    name: name,
+    email: email,
+    number:number,
+    subject: subject,
+    message: message,
+    time: new Date().toISOString()
+  })
+  .then(() => {
+    alert("Message sent successfully!");
+    form.reset();
+  })
+  .catch((error) => {
+    alert("Error: " + error.message);
+  });
+});
+
 
 
